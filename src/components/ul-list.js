@@ -18,6 +18,14 @@ class UlList  extends LitElement {
         list-style-type:none;
         flex-wrap: wrap
       }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #ffffff;
+      }
     `;
   }
 
@@ -45,7 +53,11 @@ class UlList  extends LitElement {
         ? html`<li>${item}</li>`
         : html`<li>
                 <a href=${item.link} target="_blank">
-                  <img src=${item.img} alt="pixel-perfect" title="socialnetwork">
+                  ${
+                    item.img
+                    ? html`<img src=${item.img} alt="pixel-perfect" title="socialnetwork">`
+                    : item.text
+                  }
                 </a>
               </li>`))}
       </ul>

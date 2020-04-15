@@ -8,11 +8,11 @@ export const information = {
     {
       name: 'linkedin',
       img: './src/images/linkedin.png',
-      link: 'https://mx.linkedin.com/in/gabyguzher'
+      link: 'https://mx.linkedin.com/in/gghbit'
     },
     {
       name: 'Github',
-      link: 'https://github.com/ghgaby',
+      link: 'https://github.com/gghbit',
       img: './src/images/github.png'
     },
     {
