@@ -41,14 +41,14 @@ class WrapperContent  extends LitElement {
             <img src=${this.img} alt="me" title="dollify avatar">
             <h3>${this.subtitleMe}</h3>
             <section>
-              ${this.aboutMe}
+              <p>${this.aboutMe}</p>
             </section>
           </article>
         </section>
         <section class="wrapper-content__resume">
           <h3>${this.subtitleResume}</h3>
           <section>
-            ${this.aboutResume}
+            <p>${this.aboutResume}</p>
           </section>
           <slot name="things"></slot>
         </section>
