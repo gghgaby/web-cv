@@ -55,7 +55,7 @@ class UlList  extends LitElement {
                 <a href=${item.link} target="_blank">
                   ${
                     item.img
-                    ? html`<img src=${item.img} alt="pixel-perfect" title="socialnetwork">`
+                    ? html`<img src=${item.img} alt="pixel-perfect" title=${item.link}>`
                     : item.text
                   }
                 </a>

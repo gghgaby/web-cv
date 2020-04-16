@@ -16,9 +16,15 @@ export const information = {
       img: './src/images/github.png'
     },
     {
-      name: 'Twitter',
-      link: 'https://twitter.com/gghbit',
-      img: './src/images/twitter.png'
+      name: 'Telegram',
+      link: 'https://t.me/gghbit',
+      img: './src/images/telegrama.png'
+    },
+    {
+      name: 'Gmail',
+      link: 'mailto:ggh.gabriela@gmail.com',
+      img: './src/images/gmail.png'
     }
+
   ]
 }
