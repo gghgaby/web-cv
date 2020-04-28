@@ -1,5 +1,6 @@
 export const information = {
-  img: './src/images/myself.png',
+  img: './src/images/myself.jpg',
+  title: `I'm Gaby`,
   subtitleMe: 'What about me?',
   subtitleResume: 'Resume',
   aboutMe: `I have a computer engineer degree, now I'm Front End Developer, enthusiastic JS developer and noob promotor to inclusion more girls in STEM careers...`,

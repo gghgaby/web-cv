@@ -1,12 +1,12 @@
 import { LitElement, html, css } from 'lit-element';
 import {information} from './personal-info';
-import { wrapperContentStyles } from './wrapper-content-styles.js';
+//import { wrapperContentStyles } from './router-app-styles.js';
 
 
 class WrapperContent  extends LitElement {
 
   static get styles() {
-    return [wrapperContentStyles,
+    return [
     css`:host {
       display: block;
     }`]
