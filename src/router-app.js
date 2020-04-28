@@ -97,6 +97,7 @@ class App extends router(LitElement) {
             title="Curious Cat List"
             list='[{ "link": "https://www.youtube.com/watch?v=R2zJZtFHG4M", "text": "I spoke in DevDay For Women 2019"}, {"link": "https://medium.com/@gghbit/uso-de-la-coerci%C3%B3n-y-es6-para-los-ut-3a43b383cf0", "text": "Write (spanish) in Medium about a lot of things"}]'
           ></ul-list>
+            <br> <h2>EN CONSTRUCCIÓN...</h2>
           </section>
         </app-main>
       </app-main>

@@ -12,10 +12,10 @@ class Link extends navigator(LitElement) {
           a {
             text-decoration: none;
             margin: 0 8px;
-            color: #ff5733;
+            color: #347474;
         }
     			a:hover {
-					color: #c70039;
+					color: #ff7e67;
 				}
         `
     }

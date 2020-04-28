@@ -1,7 +1,7 @@
 import { css } from 'lit-element';
 export const RouterAppStyles = css `
   *{
-    color: #511845;
+    color: #35495e;
   }
   .router-app-nav{
     display: flex;
@@ -15,14 +15,12 @@ export const RouterAppStyles = css `
     justify-content: center;
     flex-wrap: wrap;
     margin: 64px 0 0 0;
+    font-size: 20px;
+    line-height: 24px;
   }
   .wrapper-content-me:before{
     content: '';
-    position: absolute;
-    bottom:0;
-    right: 100px;
-    height: 90vh;
-    background-image: url("./src/images/ink.png");
+    width: 100vw;
   }
   .text-me{
     margin: 64px;
@@ -30,8 +28,8 @@ export const RouterAppStyles = css `
   }
   .text-me:before{
     content: 'Hi!';
-    font-size: 64px;
-    color: #900c3f;
+    font-size: 128px;
+    color: #ff7e67;
     animation: colorInf 5s infinite;
   }
   .img-me {
@@ -73,14 +71,17 @@ export const RouterAppStyles = css `
     height: 60vh;
   }
   .wrapper-content-resume p {
-    color: #900c3f;
+    color: #35495e;
     flex: 0 1 50%;
+    font-size: 18px;
+    line-height: 24px;
   }
   .wrapper-content-projects{
     font-family: 'Patrick Hand', cursive;
     display: flex;
     align-items: center;
     margin: 64px 0 0 0;
+    color: #511845;
   }
   .contact{
     position: absolute;
@@ -90,13 +91,13 @@ export const RouterAppStyles = css `
   }
   @keyframes colorInf {
   0% {
-    color: #900c3f;
+    color: #ff7e67;
   }
   50% {
-    color: #c70039;
+    color: #347474;
   }
   100% {
-    color: #ff5733;
+    color: #42b883;
   }
 }
 `;
