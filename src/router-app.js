@@ -70,7 +70,7 @@ class App extends router(LitElement) {
       <nav class="router-app-nav">
         <app-link class="router-app-link" href="/">About Me</app-link>
         <app-link class="router-app-link" href="/resume">Resume</app-link>
-        <app-link class="router-app-link" href="/projects">Personal Projects</app-link>
+        <app-link class="router-app-link" href="/projects">Some works</app-link>
       </nav>
 
       <app-main active-route=${this.route}>
@@ -80,6 +80,7 @@ class App extends router(LitElement) {
               <img class="img-me" src=${this.img} alt="me" title="Gaby">
             </div>
             <section class="text-me">
+              <p class="greeting">Hi!</p>
               <h3>${this.title}</h3>
               <p>${this.aboutMe}</p>
             </section>
@@ -87,7 +88,10 @@ class App extends router(LitElement) {
         </app-main>
         <app-main route='resume'>
           <section class="wrapper-content-resume">
-            <p>${this.aboutResume }</p>
+            <p class="text-resume">${this.aboutResume }</p>
+            <div class="resume-tech">
+              <img class="img-stack" src="./src/images/stack.png" alt="javascript" title="js">
+            </div>
           </section>
         </app-main>
         <app-main route='projects'>

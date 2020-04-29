@@ -18,19 +18,14 @@ export const RouterAppStyles = css `
     font-size: 20px;
     line-height: 24px;
   }
-  .wrapper-content-me:before{
-    content: '';
-    width: 100vw;
-  }
   .text-me{
     margin: 64px;
     flex: 0 0 50%;
   }
-  .text-me:before{
-    content: 'Hi!';
-    font-size: 128px;
+  .greeting{
+    font-size: 100px;
     color: #ff7e67;
-    animation: colorInf 5s infinite;
+    animation: hi 1s ease infinite;
   }
   .img-me {
     width: 100%;
@@ -69,12 +64,22 @@ export const RouterAppStyles = css `
     margin: 64px 0 0 0;
     align-items: center;
     height: 60vh;
+    flex-wrap: wrap;
   }
-  .wrapper-content-resume p {
+  .text-resume {
     color: #35495e;
     flex: 0 1 50%;
     font-size: 18px;
     line-height: 24px;
+    margin: 0;
+  }
+  .img-stack{
+    width: 100%;
+  }
+  .resume-tech{
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
   }
   .wrapper-content-projects{
     font-family: 'Patrick Hand', cursive;
@@ -90,14 +95,28 @@ export const RouterAppStyles = css `
     top: 200px;
   }
   @keyframes colorInf {
-  0% {
-    color: #ff7e67;
+    0% {
+      color: #ff7e67;
+    }
+    50% {
+      color: #347474;
+    }
+    100% {
+      color: #42b883;
+    }
   }
-  50% {
-    color: #347474;
+  @keyframes hi {
+    30% { transform: scale(1.1); }
+    40%, 60% { transform: rotate(-10deg) scale(1.1); }
+    50% { transform: rotate(10deg) scale(1.1); }
+    70% { transform: rotate(0deg) scale(1.1); }
+    100% { transform: scale(1); }
   }
-  100% {
-    color: #42b883;
+  @keyframes hinge {
+    0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }  
+    20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }  
+    40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; } 
+    80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; } 
+    100% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
   }
-}
 `;
