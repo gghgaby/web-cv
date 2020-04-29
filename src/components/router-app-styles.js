@@ -77,7 +77,7 @@ export const RouterAppStyles = css `
     width: 100%;
   }
   .resume-tech{
-    flex: 0 0 60%;
+    flex: 0 0 53%;
     display: flex;
     justify-content: center;
   }
