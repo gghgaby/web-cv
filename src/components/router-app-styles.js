@@ -6,7 +6,7 @@ export const RouterAppStyles = css `
   .router-app-nav{
     display: flex;
     justify-content: flex-end;
-    font-family: 'Neucha', cursive;
+    font-family: 'Concert One', cursive;
   }
   .wrapper-content-me{
     font-family: 'Patrick Hand', cursive;
@@ -57,7 +57,7 @@ export const RouterAppStyles = css `
     box-shadow: 0px 1px 3px rgba(0,0,0,0.4);
   }
   .wrapper-content-resume {
-    font-family: 'Neucha', cursive;
+    font-family: 'Patrick Hand', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,6 +93,13 @@ export const RouterAppStyles = css `
     right: 55px;
     width: 30px;
     top: 200px;
+  }
+  .copyright-msg{
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: #ff7e67;
+    font-family: 'Concert One', cursive;
   }
   @keyframes colorInf {
     0% {

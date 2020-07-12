@@ -95,6 +95,7 @@ class App extends router(LitElement) {
           </section>
         </app-main>
         <app-main route='projects'>
+        <!--img class="" src="./src/images/black-cat.png" alt="cat" title="cat"!-->  
           <section class="wrapper-content-projects">
           <ul-list
             slot="things"
@@ -110,6 +111,7 @@ class App extends router(LitElement) {
           online= true
         ></ul-list>
       </footer>
+      <span class="copyright-msg">&copy;2020 Gaby Guzman. All rights reserved.</span>
     `;
   }
 }
