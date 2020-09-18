@@ -16,15 +16,18 @@ class UlList  extends LitElement {
         display: flex;
         justify-content: space-evenly;
         list-style-type:none;
-        flex-wrap: wrap
+        flex-wrap: wrap;
+        padding: 1rem 2rem;
+        border: 0.2rem solid #ff7e67;
+        opacity: 0.8;
+        border-radius: 3rem;
       }
       a {
         text-decoration: none;
         color: inherit;
       }
       a:hover {
-        text-decoration: underline;
-        color: #ffffff;
+        color: #ff7e67;
       }
     `;
   }
@@ -39,7 +42,7 @@ class UlList  extends LitElement {
 
   constructor() {
     super();
-    this.list = information.listCuriousCat || [];
+    this.list = [];
     this.title = '';
     this.online = false;
   }

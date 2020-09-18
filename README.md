@@ -6,6 +6,7 @@ To see this project in action visit [https://gghbit.netlify.com/](https://gghbit
 Color Palette: [https://colorhunt.co/palette/158293]
 
 Iconos: Pixel Perfect [https://www.flaticon.es/packs/logos-and-brands]
+        Good Ware [https://www.flaticon.es/icono-gratis/astronave_2927887?term=cohete&page=1&position=36]
 
 ```bash
 polymer serve

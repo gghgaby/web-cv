@@ -1,6 +1,8 @@
 import { LitElement, html,  css} from 'lit-element';
 import { router } from 'lit-element-router';
-import './components/wrapper-content';
+import './pages/about-me';
+import './pages/resume-page';
+import './pages/cat-list';
 import './components/ul-list';
 import './components/app-link';
 import './components/app-main';
@@ -15,11 +17,7 @@ class App extends router(LitElement) {
       params: { type: Object },
       query: { type: Object },
       title: { type: String },
-      subtitleMe: { type: String },
-      aboutMe: { type: String },
-      subtitleResume: { type: String },
-      aboutResume: { type: String },
-      img: { type: String }
+      hideLoading: { type: String }
     };
   }
 
@@ -27,7 +25,18 @@ class App extends router(LitElement) {
     return [ RouterAppStyles,
     css`:host {
       display: block;
-    }`]
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .router-app-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 1rem;
+      height: 100vh;
+    }
+    `]
   }
 
   static get routes() {
@@ -38,9 +47,13 @@ class App extends router(LitElement) {
       name: 'resume',
       pattern: 'resume'
     }, {
-      name: 'projects',
-      pattern: 'projects'
-    }];
+      name: 'cat',
+      pattern: 'cat'
+    },{
+      name: 'work',
+      pattern: 'work'
+    }
+  ];
   }
  
   constructor() {
@@ -48,70 +61,87 @@ class App extends router(LitElement) {
     this.route = '';
     this.params = {};
     this.query = {};
-
-    let {title = '', subtitleMe = '', aboutMe = '', subtitleResume = '', aboutResume = '', img = ''} = information;
-    this.title = title;
-    this.subtitleMe = subtitleMe;
-    this.aboutMe = aboutMe;
-    this.subtitleResume = subtitleResume;
-    this.aboutResume = aboutResume;
-    this.img =  img;
+    this.hideLoading = false;
   }
  
-  router(route, params, query, data) {
+  async router(route, params, query, data) {
     this.route = route;
     this.params = params;
     this.query = query;
-    console.log(route, params, query, data);
+    await this.updateComplete;
+    this._setActiveOption(this.route);
   }
- 
+
+  _setActiveOption(route) {
+    route = route == 'me' ? '' : route;
+    if(this.shadowRoot.querySelector('.activated')) {
+      this.shadowRoot.querySelector('.router-app-link.activated').classList.remove('activated');
+    }
+    this.shadowRoot.querySelector(`.router-app-link[href="${'/'+route}"]`).classList.add('activated');
+  }
+
+  updated() {
+    this._hideSpinner();
+  }
+
+  async _hideSpinner() {
+    await this.updateComplete;
+    this.hideLoading = true;
+  }
+
+  get loadingTemplate() {
+    return this.hideLoading
+      ? ''
+      : html`
+      <div class="loading-wrapper">
+        <div class="loading">
+          <div class="dot dot1"></div>
+          <div class="dot dot2"></div>
+          <div class="dot dot3"></div>
+        </div>
+      </div>
+    `;
+  }
+
   render() {
     return html`
-      <nav class="router-app-nav">
-        <app-link class="router-app-link" href="/">About Me</app-link>
-        <app-link class="router-app-link" href="/resume">Resume</app-link>
-        <app-link class="router-app-link" href="/projects">Some works</app-link>
-      </nav>
+      ${this.loadingTemplate}
+      <div class="router-app-content">
+        <nav class="router-app-nav">
+          <app-link class="router-app-link" href="/">About Me</app-link>
+          <app-link class="router-app-link" href="/resume">Resume</app-link>
+          <app-link class="router-app-link" href="/work">Some work</app-link>
+          <app-link class="router-app-link" href="/cat">Curious Cat</app-link>
+        </nav>
 
-      <app-main active-route=${this.route}>
-        <app-main route='me'>
-          <section class="wrapper-content-me">
-            <div class="tape uno">
-              <img class="img-me" src=${this.img} alt="me" title="Gaby">
-            </div>
-            <section class="text-me">
-              <p class="greeting">Hi!</p>
-              <h3>${this.title}</h3>
-              <p>${this.aboutMe}</p>
-            </section>
-          </section>
-        </app-main>
-        <app-main route='resume'>
-          <section class="wrapper-content-resume">
-            <p class="text-resume">${this.aboutResume }</p>
-            <div class="resume-tech">
-              <img class="img-stack" src="./src/images/stack.png" alt="javascript" title="js">
-            </div>
-          </section>
-        </app-main>
-        <app-main route='projects'>
-        <!--img class="" src="./src/images/black-cat.png" alt="cat" title="cat"!-->  
-          <section class="wrapper-content-projects">
-          <ul-list
-            slot="things"
-            title="Curious Cat List"
-            list='[{ "link": "https://www.youtube.com/watch?v=R2zJZtFHG4M", "text": "I spoke in DevDay For Women 2019"}, {"link": "https://medium.com/@gghbit/uso-de-la-coerci%C3%B3n-y-es6-para-los-ut-3a43b383cf0", "text": "Write (spanish) in Medium about a lot of things"}]'
-          ></ul-list>
-            <br> <h2>EN CONSTRUCCIÓN...</h2>
-          </section>
-        </app-main>
-      </app-main>
+        <app-main active-route=${this.route}>
+          <app-main route='me'>
+            <about-me .information="${information}"></about-me>
+          </app-main>
+          <app-main route='resume'>
+            <resume-page .information="${information}"></resume-page>
+          </app-main>
+          <app-main route='work'>
+            <cat-list
+              .list="${information.listWork}"
+            ></cat-list>
+          </app-main>
+          <app-main route='cat'>
+            <cat-list
+              .list="${information.catList}"
+            ></cat-list>
+          </app-main>
+        <div class="copyright-msg">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>.
+          <span class="">&copy;2020 Gaby Guzman. Creative Commons License</span>
+        </div>
+      </div>
       <footer class="contact">
-        <ul-list
-          online= true
-        ></ul-list>
-      </footer>
-      <span class="copyright-msg">&copy;2020 Gaby Guzman. All rights reserved.</span>
+          <ul-list
+            .list="${information.contact}"
+            online= true
+          ></ul-list>
+        </footer>
     `;
   }
 }
