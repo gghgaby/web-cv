@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=News+Cycle&display=swap');
 :root {
-  --evening-color: #192231;
-  --sunset-color: #985E6D;
-  --cloud-color: #98878F;
-  --stormy-color: #494E6B;
+  --evening-color: #2b1f31;
+  --sunset-color: #413d65;
+  --cloud-color: #5fb9b0;
+  --stormy-color: #bef992;
   --white-color: #FFFFFF;
+  --gral-padding: 14rem; 
   --font-family: 'News Cycle', sans-serif;
 }
 *{
@@ -16,17 +17,23 @@
 body{
   font-family: var(--font-family, sans-serif);
   font-size: 16px;
+  color: var(--cloud-color);
+
+}
+
+.container-app{
+  padding: 0 var(--gral-padding);
 }
 
 header{
-  background-color: var(--evening-color, #192231);
-  color: var(--white-color, #FFFFFF);
+  background-color: var(--evening-color);
+  color: var(--white-color);
 }
 
 .principal-header{
   display: flex;
   justify-content: space-around;
-  padding: 1em 3em;
+  padding: 1em var(--gral-padding);
   align-items: center;
 }
 
@@ -46,6 +53,13 @@ header{
   font-size: 1rem;
   font-weight: 500;
   font-style: italic;
+}
+
+.cursive-dark-little-text{
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-style: italic;
+  display: block;
 }
 
 .container{
@@ -72,17 +86,12 @@ header{
   opacity: 0.9;
 }
 
-.container-home{
-  background-color: var(--evening-color, #192231);
-  color: var(--white-color, #FFFFFF);
-  display: block;
-  padding: 3em;
-}
-
 .container-home {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .container-img-me{
@@ -100,4 +109,61 @@ header{
 
 .container-img-me img{
   width: 100%;
+}
+
+/*+++++++*/
+.container-projects{
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  justify-content: center;
+}
+
+.title-projects{
+  text-align: center;
+  display: inline-block;
+}
+
+.card-container{
+  padding: 2Rem;
+  color: var(--sunset-color);
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 1px;
+  background-color: var(--stormy-color);
+  margin: 1em 2rem;
+  flex: 1 0 14rem;
+}
+
+.card-link{
+  font-style: italic;
+}
+
+.card-container-img{
+  width: 1rem;
+  height: 1rem;
+  padding-top: 1rem;
+}
+.card-container-img img{
+  width: 100%;
+}
+
+.container-about-me {
+  padding-top: 3em;
+}
+
+.container-custom-text{
+  flex: 0 0 50%;
+  margin: 4rem auto;
+}
+
+.copyright-msg{
+  font-size: 0.8rem;
+  color: var(--sunset-color)
 }

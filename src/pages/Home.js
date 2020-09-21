@@ -14,6 +14,7 @@ const Home = props => {
         <p className="bigger-text">{props.title}</p>
         <p className="primary-text">{props.subtitle}</p>
         <span className="cursive-dark-text">{props.paragraph}</span>
+        <span className="cursive-dark-little-text">{props.otherText}</span>
       </div>
     </div>
   );

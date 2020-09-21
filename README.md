@@ -1,3 +1,5 @@
+<img width="500" alt="cv web preview" src="src/images/preview.png">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
