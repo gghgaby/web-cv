@@ -1,7 +1,7 @@
 import React from 'react';
 const PersonalHeader = props => {
   const path = require.context('../images/', true);
-  const getImg = (item) => <a target="_blank" rel="external" href={item.link} key={item.link} > <img alt={item.desc} src={path('./'+item.socialImg)} /></a>;
+  const getImg = (item) => <a target="_blank" rel="external" title={item.link} href={item.link} key={item.link} > <img alt={item.desc} src={path('./'+item.socialImg)} /></a>;
 
   return (
     <header className="principal-header">

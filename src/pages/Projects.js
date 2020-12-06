@@ -1,19 +1,21 @@
 import React, { Fragment } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Card from '../components/Card';
+import ListElement from '../components/ListElement';
 
 
 const Projects = (props) => {
   return (
-  <Fragment>
+  <div className="container container-projects">
     <p className="primary-text title-projects">{props.title}</p>
-    <div className="container container-projects">
-      { props.cards.map(item => {
-        let key = uuidv4();
-        return <Card {...item} key={key}></Card>
-      })}
+    <div className="container">
+        <ul>
+        { props.cards.map(item => {
+          let key = uuidv4();
+          return <ListElement {...item} key={key}></ListElement>
+        })}
+        </ul>
     </div>
-  </Fragment>
+  </div>
   );
 };
 export default Projects;
