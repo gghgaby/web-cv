@@ -4,3 +4,5 @@ build/
 .firebase
 .firebaserc
 firebase.json
+yarn.lock
+package-lock*
