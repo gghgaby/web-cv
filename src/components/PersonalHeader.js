@@ -6,7 +6,7 @@ const PersonalHeader = props => {
   return (
     <header className="principal-header">
       <div className="container container-primary-text">
-        <span className="primary-text">{props.title}</span><span className="secondary-text">{props.subtitle}</span>
+        <span className="primary-text personal-name-header">{props.title}</span><span className="secondary-text">{props.subtitle}</span>
       </div>
       <div className="container container-icons">
         {props.iterables.map(item => getImg(item))}

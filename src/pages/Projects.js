@@ -8,7 +8,7 @@ const Projects = (props) => {
   <div className="container container-projects">
     <p className="primary-text title-projects">{props.title}</p>
     <div className="container">
-        <ul>
+        <ul className="ul-container">
         { props.cards.map(item => {
           let key = uuidv4();
           return <ListElement {...item} key={key}></ListElement>

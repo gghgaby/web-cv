@@ -15,10 +15,6 @@
   box-sizing: border-box;
 }
 
-ul {
-list-style: none;
-}
-
 body{
   font-family: var(--font-family, sans-serif);
   font-size: 16px;
@@ -33,10 +29,19 @@ header{
 }
 
 .principal-header{
+  align-items: center;
   display: flex;
   justify-content: space-around;
   padding: 1em var(--gral-padding);
-  align-items: center;
+}
+
+.personal-name-header {
+  animation: brillant 2s infinite;
+}
+
+.personal-name-header:hover{
+  animation: anima 2s infinite;
+  cursor: none;
 }
 
 .primary-text{
@@ -71,13 +76,13 @@ header{
 }
 
 .container-primary-text{
-  flex: 2 0 6rem;
+  flex: 1 0 25%;
 }
 
 .container-icons{
   height: 1.2rem;
   margin: 0.5em;
-  flex: 1 0 4rem;
+  flex: 1 0 15%;
   justify-content: space-between;
 }
 
@@ -98,7 +103,7 @@ header{
 }
 
 .container-img-me {
-  flex: 1 0 14rem;
+  flex: 1 0 12rem;
 }
 
 
@@ -114,24 +119,28 @@ header{
 
 /*+++++++*/
 .container-projects{
-  padding-top: 3em;
-  padding-bottom: 3em;
-  flex-direction: column;
   align-items: flex-end;
+  flex-direction: column;
+  padding-bottom: 3em;
+  padding-top: 3em;
 }
 
 .title-projects {
-  display: inline-block;
-  font-weight: 700;
-  width: 100%;
   background-color: #f08a5d;
-  padding: 0 1rem;
+  display: inline-block;
   margin-bottom: 1rem;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.ul-container {
+  list-style: none;
 }
 
 .li-description{
   font-size: 1rem;
   line-height: 2rem;
+  font-weight: 700;
 }
 
 .li-link{
@@ -173,15 +182,27 @@ header{
   color: var(--sunset-color)
 }
 
-@media(max-width:756px) {
+@media(max-width:768px) {
+  :root{
+    --gral-padding: 8rem; 
+  }
   .principal-header {
     padding: 3rem;
   }
 }
 
 @media(max-width:480px) {
+  :root{
+    --gral-padding: 1rem; 
+  }
   .principal-header {
     padding: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .primary-text {
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
   .container-projects {
     flex-direction: row;
@@ -193,14 +214,14 @@ header{
     margin-bottom: 2rem;
   }
   .container-projects > *{
-    flex: 1 0 20rem;
+    flex: 1 0 12rem;
   }
   .li-container{
-    position: relative;
-    margin-bottom: 2rem;
     border-radius: 2rem;
-    padding: 1rem;
     box-shadow:  0 2px 1px 1px var(--cloud-color);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    position: relative;
   }
   .copyright-msg {
     width: 100%;
@@ -218,5 +239,19 @@ header{
   }
   100% {
     transform: rotate(25deg);
+  }
+}
+
+@keyframes brillant{
+  0%{
+    text-shadow: 0;
+  }
+  50%{
+    font-weight: 500;
+    text-shadow: 1px 1px 0.5rem var(--cloud-color); 
+  }
+  100% {
+    font-weight: 500;
+    text-shadow: 1px var(--cloud-color); 
   }
 }
