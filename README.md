@@ -1,5 +1,9 @@
 <img width="500" alt="cv web preview" src="src/images/preview.png">
 
+Palette of color: https://colorhunt.co/palettes/purple <br/>
+Icons:  *Pixel Perfect*
+
+----------------------------------------------------------------------------------------------------<br>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
