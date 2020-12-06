@@ -15,20 +15,20 @@ function App() {
   return (
     <div className="App">
       <PersonalHeader
-      title="gabyguzmandev"
+      title="Gaby Guzman"
       iterables={DATA.icons}
       handleClick={handleClick}
       ></PersonalHeader>
       <div className="container-app">
         <Home
           title="Hello"
-          subtitle="I am Gabriela Guzman"
+          subtitle="I'm Gabriela Guzman"
           paragraph="Front End Developer"
-          otherText="Based on México"
+          otherText="Based on México / Open for remote jobs"
           me='me.png'
         ></Home>
         <Projects
-          title="Some projects..."
+          title="Some projects & articles..."
           cards={DATA.projects}
         ></Projects>
         <footer>
