@@ -1,17 +1,16 @@
 import React from 'react';
 import PersonalHeader from './components/PersonalHeader';
-import AboutMe from './pages/AboutMe';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import DATA from './StaticData';
-import './App.css';
+import './GeneralStyles.css';
 
 function App() {
   const handleClick = (evt => {
     evt.preventDefault();
-    debugger
     window.location.href = evt._dispatchInstances.key;
   });
+  
   return (
     <div className="App">
       <PersonalHeader
