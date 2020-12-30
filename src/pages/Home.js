@@ -3,7 +3,7 @@ import React from 'react';
 const Home = props => {
   const path = require.context('../images/', true);
 
-  const getImg = (item) => <img alt='Ilustracion por Ig-DksArt' title="ilustracion de Gabriela" key={item} src={path('./'+item)}  />;
+  const getImg = (item) => <img alt='avatar por bolideawa' title="avatar creado por bolideawa" key={item} src={path('./'+item)}  />;
 
   return (
     <div className="container container-home">
