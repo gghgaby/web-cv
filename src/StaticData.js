@@ -1,4 +1,4 @@
-const icons = [{socialImg: 'telegram.png', desc: 'telegram', link: 'https://t.me/gabyguzmandev'},
+const icons = [{socialImg: 'telegram.png', desc: 'telegram', link: 'https://t.me/gabyguzh'},
 {socialImg: 'linkedin.png', desc: 'linkedin-white', link:'https://www.linkedin.com/in/gabyguzmandev'},
 {socialImg: 'gmail.png', desc: 'gmail-white', link: 'mailto:ggh.gabriela@gmail.com?Subject=Interesado%20en%20contactarte'},
 {socialImg: 'github.png', desc: 'git-white', link: 'https://www.github.com/gabyguzmandev'}];
